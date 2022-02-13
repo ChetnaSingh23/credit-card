@@ -16,3 +16,6 @@ npm run ios
 
 # Run only for web
 npm run  web
+
+Refer the screenshot below
+![Screenshot 2022-02-13 at 2 01 56 PM](https://user-images.githubusercontent.com/24791556/153745477-2dfb4821-f748-4c8f-ab23-828dac6f7df2.png)

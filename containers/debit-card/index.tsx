@@ -1,32 +1,29 @@
-import { StyleSheet } from 'react-native';
-import EditScreenInfo from '../../components/EditScreenInfo';
 import { View, Text } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
-
+import { styles } from  './debit.style';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { appText } from './en';
+import { Balance } from './Balance';
+import { CustomBottomSheet } from './BottomSheet';
 
 export default function DebitCard({ navigation }: RootTabScreenProps<'Credit'>) {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Credit</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+    <>
+      <View style={[styles.container, {
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,}]}>
+        <View style={styles.containerWrpeer}>
+            <Text style={styles.header}>{appText.title}</Text>
+            <Text style={styles.title}>{appText.description}</Text>
+        </View>
+
+        <Balance />        
     </View>
+    <CustomBottomSheet isHidden={true}/>
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
+

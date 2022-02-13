@@ -1,13 +1,14 @@
-const tintColorLight = '#2f95dc';
 const tintColorDark = '#fff';
+const appBackgroundColor = 'rgb(12, 54, 90)';
+
 
 export default {
   light: {
     text: '#000',
     background: '#fff',
-    tint: tintColorLight,
+    tint: appBackgroundColor,
     tabIconDefault: '#ccc',
-    tabIconSelected: tintColorLight,
+    tabIconSelected: 'red',
   },
   dark: {
     text: '#fff',
@@ -16,4 +17,9 @@ export default {
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark,
   },
+  appBackgroundColor :'rgb(12, 54, 90)',
+  primary:'#01D167',
+  secondary:'#325BAF',
+  tertiary:'#DFDFDF',
+  white:'#FFFFFF'
 };

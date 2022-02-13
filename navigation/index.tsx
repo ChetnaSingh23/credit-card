@@ -4,6 +4,7 @@
  *
  */
 import { FontAwesome } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -19,8 +20,7 @@ import Profile from '../containers/Profile';
 import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-// import TabOneScreen from '../screens/TabOneScreen';
-// import TabTwoScreen from '../screens/TabTwoScreen';
+
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -28,7 +28,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
-      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      theme={colorScheme === 'light' ? DarkTheme : DefaultTheme}>
       <RootNavigator />
     </NavigationContainer>
   );
@@ -65,14 +65,14 @@ function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="DebitCard"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarActiveTintColor: Colors.primary,
       }}>
       <BottomTab.Screen
-        name="DebitCard"
-        component={DebitCard}
-        options={({ navigation }: RootTabScreenProps<'DebitCard'>) => ({
-          title: 'DebitCard',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        name="Home"
+        component={Home }
+        options={({ navigation }: RootTabScreenProps<'Home'>) => ({
+          title: 'Home',
+          tabBarIcon: ({ color }) => <TabBarIcon name="home"  size={24}  color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
@@ -90,11 +90,12 @@ function BottomTabNavigator() {
         })}
       />
       <BottomTab.Screen
-        name="Home"
-        component={Home}
+        name="DebitCard"
+        component={DebitCard}
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'DebitCard',
+          headerShown: false,
+          tabBarIcon: ({ color }) => <TabBarIcon name="credit-card-alt"  size={24} color={color}  />,
         }}
       />
       <BottomTab.Screen
@@ -102,7 +103,7 @@ function BottomTabNavigator() {
         component={Payments}
         options={{
           title: 'Payments',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons  name="swap-horizontal-circle-outline" size={24} color={color} />,
         }}
       />
       <BottomTab.Screen
@@ -110,7 +111,7 @@ function BottomTabNavigator() {
         component={Credit}
         options={{
           title: 'Credit',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="arrow-circle-up" size={24}  color={color} />, 
         }}
       />
       <BottomTab.Screen
@@ -118,7 +119,7 @@ function BottomTabNavigator() {
         component={Profile}
         options={{
           title: 'Profile',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" size={24}  color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -131,6 +132,7 @@ function BottomTabNavigator() {
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
+  size?: number;
 }) {
   return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
 }

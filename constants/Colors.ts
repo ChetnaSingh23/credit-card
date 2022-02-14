@@ -21,5 +21,8 @@ export default {
   primary:'#01D167',
   secondary:'#325BAF',
   tertiary:'#DFDFDF',
-  white:'#FFFFFF'
+  white:'#FFFFFF',
+  black:'#252525',
+  grey :'#B1B1B1',
+  primaryLight :'#EFFCF4'
 };

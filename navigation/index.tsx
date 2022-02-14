@@ -9,11 +9,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable } from 'react-native';
+import { ColorSchemeName, Pressable, Image, Button } from 'react-native';
+import { View } from '../components/Themed';
 
 import Colors from '../constants/Colors';
 import Credit from '../containers/Credit';
 import DebitCard from '../containers/debit-card';
+import { SpendingLimit } from '../containers/debit-card/SpendingLimit';
 import Home from '../containers/Home';
 import Payments from '../containers/Payments';
 import Profile from '../containers/Profile';
@@ -34,11 +36,34 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   );
 }
 
+function LogoTitle() {
+  return (
+    <Image
+      style={{ width: 40, height: 40, marginLeft: 'auto' }}
+      source={require('../assets/images/logo.png')}
+    />
+  );
+}
+
 /**
  * A root stack navigator is often used for displaying modals on top of all other content.
  * https://reactnavigation.org/docs/modal
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
+const options ={ 
+  title: '',
+  headerShown: true,
+  headerRight:  (props) => <LogoTitle {...props} /> ,
+  headerBackTitleVisible: false,
+  headerTintColor: Colors.white,
+    headerStyle: {
+      backgroundColor: Colors.appBackgroundColor,
+      borderBottomColor: Colors.appBackgroundColor,
+      elevation: 0, // remove shadow on Android
+      shadowOpacity: 0, // remove shadow on iOS
+      borderBottomWidth: 0 // Just in case.
+    },
+  }
 
 function RootNavigator() {
   return (
@@ -48,6 +73,7 @@ function RootNavigator() {
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
+      <Stack.Screen name="SpendingLimit" component={SpendingLimit} options={options}   />
     </Stack.Navigator>
   );
 }
@@ -92,11 +118,10 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name="DebitCard"
         component={DebitCard}
-        options={{
-          title: 'DebitCard',
-          headerShown: false,
+        options={Object.assign(options, {
+          title: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="credit-card-alt"  size={24} color={color}  />,
-        }}
+        })}
       />
       <BottomTab.Screen
         name="Payments"

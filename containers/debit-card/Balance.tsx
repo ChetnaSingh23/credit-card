@@ -1,5 +1,4 @@
 import { View, Text } from '../../components/Themed';
-import { RootTabScreenProps } from '../../types';
 import { styles } from  './debit.style';
 
 export const Balance = () => {

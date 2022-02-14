@@ -135,5 +135,86 @@ export const styles = StyleSheet.create({
       borderRadius: 6/2,
       backgroundColor: Colors.white,
       marginLeft: '5%',
-    }
+    },
+    
+  });
+
+  export const spendingLimitStyle = StyleSheet.create({
+    spendingLimitWrapper : {
+      top: '5%',
+      fontSize: 15,
+      backgroundColor:Colors.white,
+      display:'flex',
+      flexDirection: 'row',
+      padding:15,
+      width:'100%',
+    },
+    spendingLimitText: {
+      color: Colors.black,
+      fontSize: 15,
+      fontWeight: '400',
+      marginLeft: '2%',
+    },
+    dollar: {
+      color: Colors.white,
+      fontSize: 15,
+      fontWeight: 'bold',
+    },
+    inputWrapper: {
+      top: '5%',
+      fontSize: 15,
+      backgroundColor: Colors.white,
+      display:'flex',
+      flexDirection: 'row',
+      padding:15,
+      width:'100%',
+    },
+    inputBox: {
+      height: 40,
+      margin: 5,
+      marginTop: 1,
+      borderBottomWidth: 1,
+      padding: 5,
+      fontSize: 25,
+      fontWeight:'bold'
+    },
+    safeViewText : {
+      width: '85%',
+    },
+    spendingLimitSubText: {
+      color: Colors.grey,
+      fontSize: 15,
+      fontWeight: '400',
+      width:'100%',
+      margin:15
+    },
+    buttonViewPrimary : {
+      display: 'flex',
+      height: 40,
+      width: 100,
+      borderRadius:5,
+      backgroundColor: Colors.primaryLight,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    lightPrimaryText : {
+      color: Colors.primary,
+      fontSize: 15,
+      fontWeight: 'bold',
+    },
+    cashLimit : {
+      margin:15,
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      backgroundColor: Colors.white,
+    },
+    button: {
+      alignItems: "center",
+      padding: 20,
+      width: '70%',
+      borderRadius: 50/2,
+      top: '40%',
+      marginLeft: '15%',
+    },
   });

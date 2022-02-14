@@ -39,9 +39,12 @@ const DATA = [
 ];
 
 
-const Item = ({ title , icon,  isSwitch}) =>  {
+const Item = ({ title , icon,  isSwitch, navigation}) =>  {
   const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const toggleSwitch = () => {
+    setIsEnabled(previousState => !previousState)
+    navigation.navigate('SpendingLimit', { navigation })
+  };
 
 return (
   <View style={styles.item}>
@@ -50,6 +53,7 @@ return (
     </View>
     <Text style={styles.title}>{title}</Text>
     {isSwitch && <Switch
+        style={styles.switch}
         trackColor={{ false: Colors.tertiary, true: Colors.primary }}
         thumbColor={isEnabled ? Colors.white : '#f4f3f4'}
         ios_backgroundColor={Colors.white}
@@ -60,8 +64,8 @@ return (
 );
 }
 
-export const ScrollViewContainer = () => {
-  const renderItem = ({ item }) => <Item key={item.id} title={item.title} icon={item.icon} isSwitch={item.isSwitch} />;
+export const ScrollViewContainer = (props:any) => {
+  const renderItem = ({ item }) => <Item key={item.id} title={item.title} icon={item.icon} isSwitch={item.isSwitch} navigation={props.navigation} />;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -73,7 +77,7 @@ export const ScrollViewContainer = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    bottom: '30%'
+    bottom: '25%'
   },
   item: {
     display: 'flex',
@@ -94,5 +98,8 @@ const styles = StyleSheet.create({
     width: 50,
     borderRadius: 50/2,
     backgroundColor:Colors.appBackgroundColor,
+  },
+  switch: {
+    marginLeft: 'auto',
   }
 });

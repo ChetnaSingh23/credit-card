@@ -23,7 +23,11 @@ npm run  web
 
 # Card Screen
 
-![WhatsApp Image 2022-02-14 at 7 02 14 PM](https://user-images.githubusercontent.com/24791556/153873816-e63431ff-1f7e-43cf-bfb5-f9edf8de2db8.jpeg)
-![WhatsApp Image 2022-02-14 at 7 02 18 PM](https://user-images.githubusercontent.com/24791556/153873821-9f27ea1c-45a5-47df-aa9b-fc241c56c53e.jpeg)
 ![WhatsApp Image 2022-02-14 at 7 02 21 PM](https://user-images.githubusercontent.com/24791556/153873824-300a2a8c-2668-44bf-b173-043d8920b993.jpeg)
+
 ![WhatsApp Image 2022-02-14 at 7 02 25 PM](https://user-images.githubusercontent.com/24791556/153873829-e9238d51-5a47-42a6-8231-c571ff4dd88a.jpeg)
+
+![WhatsApp Image 2022-02-14 at 7 02 14 PM](https://user-images.githubusercontent.com/24791556/153873816-e63431ff-1f7e-43cf-bfb5-f9edf8de2db8.jpeg)
+
+![WhatsApp Image 2022-02-14 at 7 02 18 PM](https://user-images.githubusercontent.com/24791556/153873821-9f27ea1c-45a5-47df-aa9b-fc241c56c53e.jpeg)
+

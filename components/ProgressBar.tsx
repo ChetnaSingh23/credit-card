@@ -7,6 +7,8 @@ import { appText } from "./en";
 
 export const ProgressBar = (props: any) => {
   const { progress } = props;
+  const progressValue = progress/50000*100;
+
     return (
         <View style={styles.container}>
           <View style={styles.containerText}>
@@ -15,12 +17,12 @@ export const ProgressBar = (props: any) => {
             </Text>
             <View style={styles.amountWrapper} >
               <Text style={styles.primaryAmount}>${progress} | </Text>
-              <Text style={styles.totalAmount}>500000</Text>
+              <Text style={styles.totalAmount}>50000</Text>
             </View>
           </View>
           
           <View style={styles.progressBar}>
-            <View style={[styles.progress, { width:  progress ? `(${progress/500000})%` : '1%'}]}></View>
+            <View style={[styles.progress,{ width:  progress ? `${progressValue}%` : '5%'}]}></View>
           </View>
         </View>
     )
@@ -50,7 +52,6 @@ const styles = StyleSheet.create({
   },
   progress : {
     height: 10,
-    width:'40%',
     backgroundColor: "transparent",
     borderStyle: "solid",
     borderRightWidth: 20,

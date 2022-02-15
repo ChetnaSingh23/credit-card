@@ -4,7 +4,6 @@ import { styles } from  './debit.style';
 import { appText } from './en';
 import { Balance } from './Balance';
 import { CustomBottomSheet } from '../../components/BottomSheet';
-import React, { useEffect } from 'react';
 import { DebitCardDetails } from './DebitCardDetails';
 import { ScrollViewContainer } from './ScrollViewContainer';
 import { ProgressBar } from '../../components/ProgressBar';

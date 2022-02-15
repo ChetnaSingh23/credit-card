@@ -13,6 +13,3 @@ export const CustomBottomSheet = (props: { navigation: any, customComponent :any
       </View>
   );
 }
-
-
-

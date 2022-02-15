@@ -78,14 +78,13 @@ export const styles = StyleSheet.create({
       bottom:0,
     },
     card: {
-      height: 90,
       borderRadius: 20,
-      elevation: 10,
       top: '-20%',
       position: 'absolute',
       left: 20,
       backgroundColor: Colors.primary,
       padding: 20,
+      zIndex: 9999999,
     },
     cardText: {
       color: Colors.white,
@@ -121,13 +120,12 @@ export const styles = StyleSheet.create({
       marginLeft: '70%',
     },
     showCard: {
-      height: 10,
-      borderRadius: 10,
-      elevation: 40,
-      position: 'relative',
-      top: -120,
-      left: '54%' ,
+      left: '55%' ,
       backgroundColor: Colors.white,
+      bottom: '27%',
+      borderTopLeftRadius : 10/2,
+      borderTopEndRadius: 10/2
+
     },
     showCardNo : {
       color: Colors.primary,
@@ -243,8 +241,16 @@ export const styles = StyleSheet.create({
     },
     title: {
       fontSize: 14,
-      padding: 10,
+      paddingLeft: 10,
+      paddingTop: 10,
       fontWeight:'400'
+    },
+    subTitle: {
+      fontSize: 14,
+      paddingLeft: 10,
+      paddingTop: 10,
+      fontWeight:'400',
+      color: Colors.grey
     },
     circleView: {
       display: 'flex',

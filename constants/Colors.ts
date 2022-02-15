@@ -26,4 +26,5 @@ export default {
   grey :'#B1B1B1',
   primaryLight :'#EFFCF4',
   primaryLighter : '#325BAF',
+  primaryCoolLight : '#E5FAF0' 
 };

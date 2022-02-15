@@ -29,7 +29,8 @@
         "backgroundColor": "#ffffff",
         "package": "com.chetna.credit-card",
         "versionCode": 1
-      }
+      },
+      "package": "com.vinche.creditcard"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"

@@ -1,6 +1,7 @@
 # credit-card
 Debit Card Screen which Set weekly spending limit screen.
 
+Required- NodeJS version v14.18.2   expo - 5.1.2
 # Steps to run the project
 1.Clone the repo - git clone https://github.com/ChetnaSingh23/credit-card.git
 2.npm install

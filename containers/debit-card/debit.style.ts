@@ -3,11 +3,14 @@ import Colors from '../../constants/Colors';
 
 export const styles = StyleSheet.create({
     container: {
-      display: 'flex',
-      justifyContent: "space-between",
+      flex: 1,
+      justifyContent: 'center',
     },
-    containerWrpeer : {
-      marginLeft: '10%',
+    containerWraper : {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      margin: 20
     },
     header: {
       alignItems: 'center',
@@ -15,8 +18,8 @@ export const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
     title: {
+      marginTop: 25,
       fontSize: 20,
-      top:'50%',
     },
     cashView : {
       display: 'flex',
@@ -38,17 +41,25 @@ export const styles = StyleSheet.create({
     balanceWrap : {
       display: 'flex',
       flexDirection: 'row',
-      marginBottom: 30,
-      margin: '10%',
+      marginTop: 20,
     }
   });
 
   export const bottomSheetStyles = StyleSheet.create({
     container: {
       flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: Colors.appBackgroundColor,
+      justifyContent: "center",
+      alignItems: "center",
+      width:'100%',
+    },
+    bottomsheet: {
+      backgroundColor: Colors.white,
+      height:'80%',
+      width: '100%',
+      position:'absolute',
+      bottom: 0,
+      borderTopEndRadius: 50/2,
+      borderTopStartRadius: 50/2
     },
     button: {
       alignItems: 'center',
@@ -70,8 +81,8 @@ export const styles = StyleSheet.create({
       height: 90,
       borderRadius: 20,
       elevation: 10,
-      position: 'relative',
-      top: -170,
+      top: '-20%',
+      position: 'absolute',
       left: 20,
       backgroundColor: Colors.primary,
       padding: 20,
@@ -112,10 +123,10 @@ export const styles = StyleSheet.create({
     showCard: {
       height: 10,
       borderRadius: 10,
-      elevation: 20,
+      elevation: 40,
       position: 'relative',
-      top: -110,
-      left: '49%' ,
+      top: -120,
+      left: '54%' ,
       backgroundColor: Colors.white,
     },
     showCardNo : {
@@ -217,4 +228,35 @@ export const styles = StyleSheet.create({
       top: '40%',
       marginLeft: '15%',
     },
+  });
+
+  export const scrollStyles = StyleSheet.create({
+    container: {
+      flex: 1,
+      marginTop: '25%',
+    },
+    item: {
+      display: 'flex',
+      flexDirection: 'row',
+      padding: 10,
+      marginVertical: 8,
+      marginHorizontal: 10,
+    },
+    title: {
+      fontSize: 14,
+      padding: 10,
+      fontWeight:'400'
+    },
+    circleView: {
+      display: 'flex',
+      justifyContent:'center',
+      alignItems:'center',
+      height: 50,
+      width: 50,
+      borderRadius: 50/2,
+      backgroundColor: Colors.primaryLighter,
+    },
+    switch: {
+      marginLeft: 'auto',
+    }
   });

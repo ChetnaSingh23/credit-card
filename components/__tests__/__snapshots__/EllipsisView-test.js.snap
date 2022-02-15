@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ellipsis View renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 3,
+        "fontWeight": "bold",
+        "height": 6,
+        "marginLeft": "5%",
+        "top": 6,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 3,
+        "fontWeight": "bold",
+        "height": 6,
+        "marginLeft": "5%",
+        "top": 6,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 3,
+        "fontWeight": "bold",
+        "height": 6,
+        "marginLeft": "5%",
+        "top": 6,
+        "width": 6,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 3,
+        "fontWeight": "bold",
+        "height": 6,
+        "marginLeft": "5%",
+        "top": 6,
+        "width": 6,
+      }
+    }
+  />
+</View>
+`;

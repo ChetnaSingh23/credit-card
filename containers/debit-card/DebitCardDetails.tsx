@@ -9,19 +9,9 @@ import {
 import { bottomSheetStyles } from './debit.style';
 import { Octicons } from '@expo/vector-icons'; 
 import Colors from '../../constants/Colors';
+import { EllipsisView } from '../../components/EllipsisView';
 
 const { width, height } = Dimensions.get('window');
-
-
-  const ellipsisView =() => {
-    return (
-    <View style={{display:'flex', flexDirection:'row'}}>
-      <View style={bottomSheetStyles.ellipis} />
-      <View style={bottomSheetStyles.ellipis} />
-      <View style={bottomSheetStyles.ellipis} />
-      <View style={bottomSheetStyles.ellipis} />
-    </View>)
-  }
 
 export const DebitCardDetails =() => {
     const [isCardDetailVisible, setIsCarddetailVisible] = useState(true);
@@ -53,9 +43,9 @@ export const DebitCardDetails =() => {
               </View>
               <Text style={bottomSheetStyles.cardText}>Chetna Singh</Text>
               <View style={bottomSheetStyles.cardNos}>
-                {isCardDetailVisible ? <Text style={bottomSheetStyles.cardNo}>5 6 4 7</Text> : ellipsisView()}
-                {isCardDetailVisible ? <Text style={bottomSheetStyles.cardNo}>3 4 1 1</Text> : ellipsisView()}
-                {isCardDetailVisible ? <Text style={bottomSheetStyles.cardNo}>2 4 1 3</Text> : ellipsisView()}
+                {isCardDetailVisible ? <Text style={bottomSheetStyles.cardNo}>5 6 4 7</Text> : EllipsisView()}
+                {isCardDetailVisible ? <Text style={bottomSheetStyles.cardNo}>3 4 1 1</Text> : EllipsisView()}
+                {isCardDetailVisible ? <Text style={bottomSheetStyles.cardNo}>2 4 1 3</Text> : EllipsisView()}
                 <Text style={bottomSheetStyles.cardNo}>2 0 2 0</Text>
               </View>
               <View style={bottomSheetStyles.cvvWrap}>

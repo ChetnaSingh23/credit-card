@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Balance component renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgb(12, 54, 90)",
+      },
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "marginTop": 20,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(12, 54, 90)",
+        },
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#01D167",
+          "borderRadius": 5,
+          "color": "#FFFFFF",
+          "display": "flex",
+          "height": 30,
+          "justifyContent": "center",
+          "width": 50,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000",
+          },
+          Object {
+            "fontSize": 20,
+            "fontWeight": "bold",
+          },
+        ]
+      }
+    >
+      S$
+    </Text>
+  </View>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000",
+        },
+        Array [
+          Object {
+            "fontSize": 20,
+            "fontWeight": "bold",
+          },
+          Object {
+            "marginLeft": 15,
+          },
+        ],
+      ]
+    }
+  >
+    3,000
+  </Text>
+</View>
+`;

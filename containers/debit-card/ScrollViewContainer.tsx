@@ -3,6 +3,7 @@ import { SafeAreaView, View, FlatList, StyleSheet, Text, Switch } from 'react-na
 import Colors from '../../constants/Colors';
 import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { scrollStyles } from './debit.style';
 
 const DATA = [
   {
@@ -47,13 +48,13 @@ const Item = ({ title , icon,  isSwitch, navigation}) =>  {
   };
 
 return (
-  <View style={styles.item}>
-    <View style={styles.circleView}>
+  <View style={scrollStyles.item}>
+    <View style={scrollStyles.circleView}>
       {icon}
     </View>
-    <Text style={styles.title}>{title}</Text>
+    <Text style={scrollStyles.title}>{title}</Text>
     {isSwitch && <Switch
-        style={styles.switch}
+        style={scrollStyles.switch}
         trackColor={{ false: Colors.tertiary, true: Colors.primary }}
         thumbColor={isEnabled ? Colors.white : '#f4f3f4'}
         ios_backgroundColor={Colors.white}
@@ -68,38 +69,10 @@ export const ScrollViewContainer = (props:any) => {
   const renderItem = ({ item }) => <Item key={item.id} title={item.title} icon={item.icon} isSwitch={item.isSwitch} navigation={props.navigation} />;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={scrollStyles.container}>
       <FlatList data={DATA} renderItem={renderItem} keyExtractor={item => item.id} />
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    bottom: '25%'
-  },
-  item: {
-    display: 'flex',
-    flexDirection: 'row',
-    padding: 10,
-    marginVertical: 8,
-    marginHorizontal: 10,
-  },
-  title: {
-    fontSize: 12,
-    padding: 10,
-  },
-  circleView: {
-    display: 'flex',
-    justifyContent:'center',
-    alignItems:'center',
-    height: 50,
-    width: 50,
-    borderRadius: 50/2,
-    backgroundColor:Colors.appBackgroundColor,
-  },
-  switch: {
-    marginLeft: 'auto',
-  }
-});
+

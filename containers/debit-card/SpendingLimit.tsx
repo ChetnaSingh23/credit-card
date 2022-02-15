@@ -3,7 +3,7 @@ import { View, Text } from '../../components/Themed';
 import { spendingLimitStyle, styles } from  './debit.style';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { appText } from './en';
-import { CustomBottomSheet } from './BottomSheet';
+import { CustomBottomSheet } from '../../components/BottomSheet';
 import {useState} from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import Colors from '../../constants/Colors';
@@ -66,15 +66,11 @@ export const SpendingLimit = (props: { navigation: any; }) => {
     const insets = useSafeAreaInsets();
 
     return (
-      <>
-        <View style={[styles.container, {
-          paddingTop: insets.top,
-          paddingBottom: insets.bottom,}]}>
-          <View style={styles.containerWrpeer}>
-            <Text style={styles.header}>{appText.spendingLimit}</Text>
-          </View>
-        </View>
-        <CustomBottomSheet  navigation={props.navigation} customComponent={<SpendingDetail navigation={props.navigation} />} />
-      </>
+      <View style={styles.container}>
+      <View style={styles.containerWraper}>
+        <Text style={styles.header}>{appText.spendingLimit}</Text>
+      </View>
+      <CustomBottomSheet navigation={props.navigation} customStyle={ { height:'95%'}} customComponent={<SpendingDetail navigation={props.navigation}  />} />
+    </View>
     );
 }

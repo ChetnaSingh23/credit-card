@@ -24,5 +24,6 @@ export default {
   white:'#FFFFFF',
   black:'#252525',
   grey :'#B1B1B1',
-  primaryLight :'#EFFCF4'
+  primaryLight :'#EFFCF4',
+  primaryLighter : '#325BAF',
 };

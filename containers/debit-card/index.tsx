@@ -4,35 +4,31 @@ import { styles } from  './debit.style';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { appText } from './en';
 import { Balance } from './Balance';
-import { CustomBottomSheet } from './BottomSheet';
+import { CustomBottomSheet } from '../../components/BottomSheet';
 import React from 'react';
 import { DebitCardDetails } from './DebitCardDetails';
 import { ScrollViewContainer } from './ScrollViewContainer';
+import { ProgressBar } from '../../components/ProgressBar';
 
 export default function DebitCard({ navigation }: RootTabScreenProps<'Credit'>) {
-  const insets = useSafeAreaInsets();
 
   const ScrollViewAndDebitCard = () => {
     return (<>
       <DebitCardDetails />
-      <ScrollViewContainer  navigation={navigation} /></>)
+      <ProgressBar/>
+      <ScrollViewContainer  navigation={navigation} />
+    </>)
   }
 
   return (
-    <>
-      <View style={[styles.container, {
-        paddingTop: insets.top,
-        paddingBottom: insets.bottom,}]}>
-        <View style={styles.containerWrpeer}>
-          <Text style={styles.header}>{appText.title}</Text>
-          <Text style={styles.title}>{appText.description}</Text>
-        </View>
+    <View style={styles.container}>
+      <View style={styles.containerWraper}>
+        <Text style={styles.header}>{appText.title}</Text>
+        <Text style={styles.title}>{appText.description}</Text>
         <Balance /> 
       </View>
-      <CustomBottomSheet  
-        navigation={navigation} 
-        customComponent={<ScrollViewAndDebitCard />}/>
-    </>
+      <CustomBottomSheet navigation={navigation} customComponent={<ScrollViewAndDebitCard />} />
+    </View>
   );
 }
 

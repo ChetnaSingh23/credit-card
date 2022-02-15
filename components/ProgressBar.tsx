@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     flexDirection: "column", //column direction
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 120,
+    marginTop: 60,
    },
    containerText:{
         display: 'flex',

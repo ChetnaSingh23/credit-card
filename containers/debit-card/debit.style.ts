@@ -233,7 +233,6 @@ export const styles = StyleSheet.create({
   export const scrollStyles = StyleSheet.create({
     container: {
       flex: 1,
-      marginTop: '25%',
     },
     item: {
       display: 'flex',

@@ -1,7 +1,6 @@
 import { View, Text } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
 import { styles } from  './debit.style';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { appText } from './en';
 import { Balance } from './Balance';
 import { CustomBottomSheet } from '../../components/BottomSheet';

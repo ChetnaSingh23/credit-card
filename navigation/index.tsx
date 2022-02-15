@@ -9,8 +9,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable, Image, Button } from 'react-native';
-import { View } from '../components/Themed';
+import { ColorSchemeName, Image } from 'react-native';
 
 import Colors from '../constants/Colors';
 import Credit from '../containers/Credit';
@@ -50,11 +49,11 @@ function LogoTitle() {
  * https://reactnavigation.org/docs/modal
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
-const options ={ 
-  title: '',
+const subScreenoptions = { 
   headerShown: true,
-  headerRight:  (props) => <LogoTitle {...props} /> ,
+  headerRight:  (props: JSX.IntrinsicAttributes) => <LogoTitle {...props} /> ,
   headerBackTitleVisible: false,
+  title: '',
   headerTintColor: Colors.white,
     headerStyle: {
       backgroundColor: Colors.appBackgroundColor,
@@ -65,6 +64,20 @@ const options ={
     },
   }
 
+  const mainScreenOptions = { 
+    headerShown: true,
+    headerRight:  (props: JSX.IntrinsicAttributes) => <LogoTitle {...props} /> ,
+    headerBackTitleVisible: false,
+    headerTintColor: Colors.appBackgroundColor,
+      headerStyle: {
+        backgroundColor: Colors.appBackgroundColor,
+        borderBottomColor: Colors.appBackgroundColor,
+        elevation: 0, // remove shadow on Android
+        shadowOpacity: 0, // remove shadow on iOS
+        borderBottomWidth: 0 // Just in case.
+      },
+    }
+
 function RootNavigator() {
   return (
     <Stack.Navigator>
@@ -73,7 +86,7 @@ function RootNavigator() {
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
-      <Stack.Screen name="SpendingLimit" component={SpendingLimit} options={options}   />
+      <Stack.Screen name="SpendingLimit" component={SpendingLimit} options={subScreenoptions}   />
     </Stack.Navigator>
   );
 }
@@ -98,28 +111,14 @@ function BottomTabNavigator() {
         component={Home }
         options={({ navigation }: RootTabScreenProps<'Home'>) => ({
           title: 'Home',
-          tabBarIcon: ({ color }) => <TabBarIcon name="home"  size={24}  color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate('Modal')}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}>
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
+          tabBarIcon: ({ color }) => <TabBarIcon name="home"  size={24}  color={color} />
         })}
       />
       <BottomTab.Screen
         name="DebitCard"
         component={DebitCard}
-        options={Object.assign(options, {
-          title: '',
+        options={Object.assign(mainScreenOptions, {
+          title: 'DebitCard',
           tabBarIcon: ({ color }) => <TabBarIcon name="credit-card-alt"  size={24} color={color}  />,
         })}
       />

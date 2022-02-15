@@ -3,8 +3,8 @@ import {
   View,
   Text,
   Dimensions,
-  TouchableOpacity,
-  Image
+  Image,
+  TouchableOpacity
 } from 'react-native';
 import { bottomSheetStyles } from './debit.style';
 import { Octicons } from '@expo/vector-icons'; 
@@ -21,17 +21,17 @@ export const DebitCardDetails =() => {
     }
 
     return <>
-        <View style={[bottomSheetStyles.showCard, {
+        <TouchableOpacity style={[bottomSheetStyles.showCard, {
           minHeight: 50,
           width: width * 0.4,
-        }]}>
-          <TouchableOpacity onPress={toggleCardDetails} style={bottomSheetStyles.cardDetail}>
+        }]} onPress={toggleCardDetails}>
+          <View  style={bottomSheetStyles.cardDetail} >
             {isCardDetailVisible ? <Octicons name="eye" size={20} color={Colors.primary} /> : 
               <Octicons name="eye-closed" size={20} color={Colors.primary} />}
             <Text style={bottomSheetStyles.showCardNo}> {isCardDetailVisible ? 'Show' : 'Hide' } card number</Text>
-          </TouchableOpacity>
+          </View>
               
-        </View>
+        </TouchableOpacity>
         <View style={[bottomSheetStyles.card, {
           minHeight: height * 0.3,
           width: width * 0.9,

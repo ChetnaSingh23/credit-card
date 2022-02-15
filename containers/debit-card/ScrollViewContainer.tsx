@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, Switch } from 'react-native';
+import { SafeAreaView, View, FlatList, Text, Switch } from 'react-native';
 import Colors from '../../constants/Colors';
 import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';

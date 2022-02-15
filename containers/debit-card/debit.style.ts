@@ -84,7 +84,7 @@ export const styles = StyleSheet.create({
       left: 20,
       backgroundColor: Colors.primary,
       padding: 20,
-      zIndex: 9999999,
+      zIndex: 999,
     },
     cardText: {
       color: Colors.white,
@@ -125,7 +125,6 @@ export const styles = StyleSheet.create({
       bottom: '27%',
       borderTopLeftRadius : 10/2,
       borderTopEndRadius: 10/2
-
     },
     showCardNo : {
       color: Colors.primary,
@@ -134,7 +133,7 @@ export const styles = StyleSheet.create({
     cardDetail : {
       display: 'flex',
       flexDirection: 'row',
-      padding:5
+      padding: 5,
     },
     ellipis : {
       top: 6,
@@ -145,7 +144,6 @@ export const styles = StyleSheet.create({
       backgroundColor: Colors.white,
       marginLeft: '5%',
     },
-    
   });
 
   export const spendingLimitStyle = StyleSheet.create({
@@ -219,11 +217,12 @@ export const styles = StyleSheet.create({
       backgroundColor: Colors.white,
     },
     button: {
+      position: 'absolute',
       alignItems: "center",
       padding: 20,
       width: '70%',
       borderRadius: 50/2,
-      top: '40%',
+      bottom: '5%',
       marginLeft: '15%',
     },
   });
@@ -231,6 +230,7 @@ export const styles = StyleSheet.create({
   export const scrollStyles = StyleSheet.create({
     container: {
       flex: 1,
+      marginTop: 20,
     },
     item: {
       display: 'flex',

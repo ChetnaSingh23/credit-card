@@ -1,33 +1,37 @@
 import React from "react";
 import { View , Text, StyleSheet} from "react-native";
 import Colors from "../constants/Colors";
+import { appText } from "./en";
+
+//Implement progress bar value by adding prev value to current dynamically
 
 export const ProgressBar = (props: any) => {
+  const { progress } = props;
     return (
         <View style={styles.container}>
           <View style={styles.containerText}>
             <Text>
-                Debit card spending limit 
+                {appText.spendinglimitTitle}
             </Text>
             <View style={styles.amountWrapper} >
-              <Text style={styles.primaryAmount}>$345 | </Text>
-              <Text style={styles.totalAmount}>5000</Text>
+              <Text style={styles.primaryAmount}>${progress} | </Text>
+              <Text style={styles.totalAmount}>500000</Text>
             </View>
           </View>
           
           <View style={styles.progressBar}>
-            <View style={styles.progress}></View>
+            <View style={[styles.progress, { width:  progress ? `(${progress/500000})%` : '1%'}]}></View>
           </View>
         </View>
     )
 }
 const styles = StyleSheet.create({
     container: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: '20%',
+      display: 'flex',
+      flexDirection: "column",
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: '34%',
   },
   containerText:{
       display: 'flex',
